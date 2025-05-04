@@ -422,7 +422,7 @@ const imagePeopleTag = [
   },
   {
     image: "img_216",
-    names: ["fabio", ""]
+    names: ["fabio", "pino"]
   },
   {
     image: "img_217",
@@ -430,7 +430,7 @@ const imagePeopleTag = [
   },
   {
     image: "img_220",
-    names: ["fabio"]
+    names: ["valerio"]
   },
   {
     image: "img_222",
@@ -462,7 +462,7 @@ const imagePeopleTag = [
   },
   {
     image: "img_244",
-    names: []
+    names: ["pino", "rosa", "zia_anna", "valerio"]
   },
   {
     image: "img_246",
