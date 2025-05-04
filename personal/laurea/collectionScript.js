@@ -5,7 +5,8 @@ const lightboxMain = new PhotoSwipeLightbox({
   gallery: '#mainGallery',
   children: 'a',
   pswpModule: PhotoSwipe,
-  history: true
+  history: true,
+  id: "main-gallery"
 });
 
 lightboxMain.on('uiRegister', function() {
@@ -39,7 +40,8 @@ lightboxMain.on('uiRegister', function() {
     gallery: '#personalGallery',
     children: 'a',
     pswpModule: PhotoSwipe,
-    history: true
+    history: true,
+    id: "personal-gallery"
   });
   
   lightboxPersonal.on('uiRegister', function() {
