@@ -4,7 +4,8 @@ import PhotoSwipe from '/personal/laurea/vendor/photoswipe/dist/photoswipe.esm.j
 const lightboxMain = new PhotoSwipeLightbox({
   gallery: '#mainGallery',
   children: 'a',
-  pswpModule: PhotoSwipe
+  pswpModule: PhotoSwipe,
+  history: true
 });
 
 lightboxMain.on('uiRegister', function() {
@@ -37,7 +38,8 @@ lightboxMain.on('uiRegister', function() {
   const lightboxPersonal = new PhotoSwipeLightbox({
     gallery: '#personalGallery',
     children: 'a',
-    pswpModule: PhotoSwipe
+    pswpModule: PhotoSwipe,
+    history: true
   });
   
   lightboxPersonal.on('uiRegister', function() {
