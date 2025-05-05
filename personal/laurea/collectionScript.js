@@ -36,6 +36,12 @@ lightboxMain.on('uiRegister', function() {
   });
   lightboxMain.init();
 
+  window.addEventListener('popstate', () => {
+    if (lightboxMain.pswp?.isOpen) {
+      lightboxMain.pswp.close();
+    }
+  });
+
   const lightboxPersonal = new PhotoSwipeLightbox({
     gallery: '#personalGallery',
     children: 'a',
@@ -70,6 +76,12 @@ lightboxMain.on('uiRegister', function() {
       });
     });
     lightboxPersonal.init();
+
+    window.addEventListener('popstate', () => {
+      if (lightboxPersonal.pswp?.isOpen) {
+        lightboxPersonal.pswp.close();
+      }
+    });
 
 const selector = new SlimSelect({
   select: "select",
