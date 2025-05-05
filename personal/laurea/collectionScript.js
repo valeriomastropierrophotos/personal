@@ -36,11 +36,22 @@ lightboxMain.on('uiRegister', function() {
   });
   lightboxMain.init();
 
-  window.addEventListener('popstate', () => {
-    if (lightboxMain.pswp?.isOpen) {
-      lightboxMain.pswp.close();
-    }
-  });
+lightboxMain.on('open', () => {
+  history.pushState({ pswp: true }, '');
+});
+
+window.addEventListener('popstate', (event) => {
+  if (event.state && event.state.pswp && lightboxMain.pswp) {
+    lightboxMain.pswp.close();
+  }
+});
+
+lightboxMain.on('close', () => {
+  if (history.state && history.state.pswp) {
+    history.back();
+  }
+});
+
 
   const lightboxPersonal = new PhotoSwipeLightbox({
     gallery: '#personalGallery',
@@ -77,11 +88,21 @@ lightboxMain.on('uiRegister', function() {
     });
     lightboxPersonal.init();
 
-    window.addEventListener('popstate', () => {
-      if (lightboxPersonal.pswp?.isOpen) {
-        lightboxPersonal.pswp.close();
-      }
-    });
+lightboxPersonal.on('open', () => {
+  history.pushState({ pswp: true }, '');
+});
+
+window.addEventListener('popstate', (event) => {
+  if (event.state && event.state.pswp && lightboxPersonal.pswp) {
+    lightboxPersonal.pswp.close();
+  }
+});
+
+lightboxPersonal.on('close', () => {
+  if (history.state && history.state.pswp) {
+    history.back();
+  }
+});
 
 const selector = new SlimSelect({
   select: "select",
