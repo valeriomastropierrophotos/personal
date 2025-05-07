@@ -387,7 +387,7 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
             imageCards[index].classList.remove('active');
             index = (index + 1) % imageCards.length;
             imageCards[index].classList.add('active');
-          }, 3000);
+          }, 1200);
         }
       };
     });
