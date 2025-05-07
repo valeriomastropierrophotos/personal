@@ -52,7 +52,6 @@ lightboxMain.on('close', () => {
   }
 });
 
-
   const lightboxPersonal = new PhotoSwipeLightbox({
     gallery: '#personalGallery',
     children: 'a',
@@ -120,8 +119,6 @@ const idToName = {
   "30": "Francesca"
 };
 
-
-
 const imagePeopleTag = [
   {
     image: "img_12",
@@ -129,11 +126,11 @@ const imagePeopleTag = [
   },
   {
     image: "img_13",
-    names: ["erica", "mmw", "adriana"]
+    names: ["erica", "mmw"]
   },
   {
     image: "img_14",
-    names: ["erica", "mmw", "adriana"]
+    names: ["erica", "mmw"]
   },
   {
     image: "img_40",
@@ -416,39 +413,28 @@ if (selectedName) {
 }
 
   //Download Personal
-  document.getElementById('downloadPersonal').addEventListener('click', (e) => {
-    e.preventDefault();
+  document.getElementById('downloadPersonal').addEventListener('click', () => {
+    const gallery = document.getElementById('personalGallery');
+    const links = gallery.querySelectorAll('a');
 
-    const fotoElements = document.querySelectorAll('#personalGallery .foto');
+    links.forEach((link, index) => {
+        const url = link.href;
+        const filename = url.substring(url.lastIndexOf('/') + 1);
 
-    const selectedImages = Array.from(fotoElements).map(e => e.id)
-
-    if (selectedImages.length === 0) {
-      alert('Seleziona almeno una immagine');
-      return;
-    }
-
-    fetch('/image/download', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ imagesId: selectedImages })
-    })
-    .then(response => response.blob())
-    .then(blob => {
-      // Crea un link temporaneo per il download del file ZIP
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'images.zip';
-      link.click();
-      URL.revokeObjectURL(url);
-    })
-    .catch(error => {
-      console.error('Errore durante il download:', error);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     });
-  });
+
+    if (links.length === 0) {
+        alert('Seleziona prima il nome');
+    }
+});
+
 
 
   window.addEventListener('load', () => {

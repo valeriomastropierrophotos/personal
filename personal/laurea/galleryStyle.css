@@ -1,6 +1,6 @@
 /* Base styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', serif;
     margin: 0;
     padding: 0;
     background-color: #FAF9F6;
@@ -59,10 +59,16 @@ select {
     letter-spacing: 1px;
 }
 
+#WhatsAppAlert{
+    margin-top: 70px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #selector { 
-    padding-top: 1vw;
     width: 50vw;
-    margin-top: 60px;
     margin-left: auto;       /* Margine sinistro automatico per centrare */
     margin-right: auto; 
     display: flex;
@@ -174,7 +180,7 @@ button {
     background-color: #DC143C;
     color: #ffffff;
     border: none;
-    padding: 8px 10px;
+    padding: 7px 9px;
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
