@@ -1815,6 +1815,7 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
   
         // Avvia slideshow solo quando tutte le immagini sono caricate
         if (imageCards.length === personalImages.length) {
+          index=0;
           slideshowInterval = setInterval(() => {
             imageCards[index].classList.remove('active');
             index = (index + 1) % imageCards.length;
