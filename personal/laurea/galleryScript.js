@@ -1814,14 +1814,14 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
         imageCards.push(anchor);
   
         // Avvia slideshow solo quando tutte le immagini sono caricate
-        if (imageCards.length === personalImages.length) {
+        
           index=0;
           slideshowInterval = setInterval(() => {
             imageCards[index].classList.remove('active');
             index = (index + 1) % imageCards.length;
             imageCards[index].classList.add('active');
-          }, 1200);
-        }
+          }, 1500);
+        
       };
     });
   }
