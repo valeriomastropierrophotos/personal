@@ -849,7 +849,7 @@ const imagePeopleTag = [
     names: ["edo", "maurizio"]
   },
   {
-    image: "img_376",
+    image: "img_377",
     names: ["carlo"]
   },
   {
@@ -898,7 +898,7 @@ const imagePeopleTag = [
   },
   {
     image: "img_388",
-    names: ["claudia", "camilla"]
+    names: ["claudia", "alfelix"]
   },
   {
     image: "img_389",
@@ -950,7 +950,7 @@ const imagePeopleTag = [
   },
   {
     image: "img_402",
-    names: ["edo", "valentina", "azzurra", "camilla", "caputo", "paola", "claudia", "flavio", "alfelix"]
+    names: ["valentina", "azzurra", "camilla", "caputo", "paola", "claudia", "flavio", "alfelix"]
   },
   {
     image: "img_403",
@@ -966,7 +966,7 @@ const imagePeopleTag = [
   },
   {
     image: "img_406",
-    names: ["edo", "valentina", "azzurra", "camilla", "mmw", "caputo", "claudia", "flavio", "alfelix"]
+    names: ["valentina", "azzurra", "camilla", "mmw", "caputo", "claudia", "flavio", "alfelix"]
   },
   {
     image: "img_407",
