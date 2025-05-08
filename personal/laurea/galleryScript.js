@@ -1769,11 +1769,17 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
       .map(entry => entry.image);
   
     if (personalImages.length === 0) {
-      return; // oppure mostra immagine alternativa
+      personalGallery.innerHTML = '<p>Nessuna immagine disponibile.</p>';
     }
   
     const basePath = '/personal/laurea/galleryPhotos/webBig/';
     personalGallery.innerHTML = '';
+
+    const loadingMessage = document.createElement('p');
+    loadingMessage.textContent = 'Caricamento...';
+    loadingMessage.id = 'loadingMessage'
+    personalGallery.appendChild(loadingMessage);
+
     if (slideshowInterval) clearInterval(slideshowInterval);
   
     const imageLoadPromises = personalImages.map(imgId => {
@@ -1791,6 +1797,9 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
     });
   
     Promise.all(imageLoadPromises).then(loadedImages => {
+
+      personalGallery.innerHTML = '';
+      
       const imageCards = [];
   
       loadedImages.forEach(({ imgId, width, height }, i) => {

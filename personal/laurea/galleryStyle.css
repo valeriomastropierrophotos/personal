@@ -213,4 +213,10 @@ button {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.4; }
   }
-  
+  #loadingMessage {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 20px;
+    color: #555;
+  }
+    
