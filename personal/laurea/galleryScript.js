@@ -1765,66 +1765,65 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
   function startSlideshow(selectedName) {
     const personalGallery = document.getElementById('personalGallery');
     const personalImages = imagePeopleTag
-    .filter(entry => entry.names.includes(selectedName.toLowerCase()))
-    .map(entry => entry.image);
+      .filter(entry => entry.names.includes(selectedName.toLowerCase()))
+      .map(entry => entry.image);
   
     if (personalImages.length === 0) {
-      //show alternative image 
+      return; // oppure mostra immagine alternativa
     }
-
-    const basePreviewPath = '/personal/laurea/galleryPhotos/webBig/';
-    const baseBigPath = '/personal/laurea/galleryPhotos/webBig/';
   
-    let index = 0;
-  
-    if (slideshowInterval) clearInterval(slideshowInterval);
+    const basePath = '/personal/laurea/galleryPhotos/webBig/';
     personalGallery.innerHTML = '';
+    if (slideshowInterval) clearInterval(slideshowInterval);
   
-    const imageCards = [];
+    const imageLoadPromises = personalImages.map(imgId => {
+      return new Promise(resolve => {
+        const tempImg = new Image();
+        tempImg.src = `${basePath}${imgId}.jpg`;
+        tempImg.onload = () => {
+          resolve({
+            imgId,
+            width: tempImg.naturalWidth,
+            height: tempImg.naturalHeight
+          });
+        };
+      });
+    });
   
-    personalImages.forEach((imgId, i) => {
-      const bigImagePath = `${baseBigPath}${imgId}.jpg`;
-      const previewPath = `${basePreviewPath}${imgId}.jpg`;
+    Promise.all(imageLoadPromises).then(loadedImages => {
+      const imageCards = [];
   
-      // Crea oggetto immagine temporaneo per leggere dimensioni
-      const tempImg = new Image();
-      tempImg.src = bigImagePath;
-      tempImg.onload = () => {
-        const width = tempImg.naturalWidth;
-        const height = tempImg.naturalHeight;
-  
+      loadedImages.forEach(({ imgId, width, height }, i) => {
         const anchor = document.createElement('a');
-        anchor.href = bigImagePath;
+        anchor.href = `${basePath}${imgId}.jpg`;
         anchor.target = '_blank';
         anchor.classList.add('imageCard');
         anchor.setAttribute('data-pswp-width', width);
         anchor.setAttribute('data-pswp-height', height);
         anchor.id = `a_${imgId}`;
   
-        if (i === 0) anchor.classList.add('active');
-  
         const img = document.createElement('img');
-        img.src = previewPath;
+        img.src = `${basePath}${imgId}.jpg`;
         img.alt = '';
         img.id = imgId;
         img.classList.add('foto');
+        if (i === 0) anchor.classList.add('active');
   
         anchor.appendChild(img);
         personalGallery.appendChild(anchor);
         imageCards.push(anchor);
+      });
   
-        // Avvia slideshow solo quando tutte le immagini sono caricate
-        if (imageCards.length === personalImages.length) {
-          index=0;
-          slideshowInterval = setInterval(() => {
-            imageCards[index].classList.remove('active');
-            index = (index + 1) % imageCards.length;
-            imageCards[index].classList.add('active');
-          }, 1500);
-        }
-      };
+      // Avvia slideshow ordinato
+      let index = 0;
+      slideshowInterval = setInterval(() => {
+        imageCards[index].classList.remove('active');
+        index = (index + 1) % imageCards.length;
+        imageCards[index].classList.add('active');
+      }, 1500);
     });
   }
+  
 
 // Ascolta il cambio nel menu a tendina
 document.querySelector('select').addEventListener('change', (event) => {
