@@ -112,11 +112,7 @@ const selector = new SlimSelect({
  })
 
 const idToName = {
-  "1": "giovanni",
-  "2": "claudio",
-  "3": "jhon",
-  // ...
-  "30": "Francesca"
+
 };
 
 const imagePeopleTag = [
@@ -437,16 +433,34 @@ if (selectedName) {
 
 
 
-  window.addEventListener('load', () => {
-    const banner = document.getElementById('topBanner');
-  
+window.addEventListener('load', () => {
+  const banner = document.getElementById('topBanner');
+
+  // Crea overlay blocca interazioni
+  const blocker = document.createElement('div');
+  blocker.style.position = 'fixed';
+  blocker.style.top = '0';
+  blocker.style.left = '0';
+  blocker.style.width = '100%';
+  blocker.style.height = '100%';
+  blocker.style.zIndex = '9999';
+  blocker.style.background = 'transparent';
+  blocker.style.pointerEvents = 'all'; // blocca click
+  blocker.style.overflow = 'hidden';   // blocca scroll
+  document.body.appendChild(blocker);
+
+  // Forza scroll in alto
+  window.scrollTo(0, 0);
+
+  setTimeout(() => {
+    banner.classList.add('shrink');
+
     setTimeout(() => {
-      banner.classList.add('shrink');
-  
-      // Dopo l'animazione (es: 1000ms), cambia in sticky
-      setTimeout(() => {
-        banner.classList.remove('shrink');
-        banner.classList.add('final');
-      }, 1000); // deve combaciare con `transition: 1s`
-    }, 2000); // aspetta 2 secondi prima di iniziare l'animazione
-  });
+      banner.classList.remove('shrink');
+      banner.classList.add('final');
+
+      // Rimuove blocco interazioni
+      document.body.removeChild(blocker);
+    }, 1000); // durata animazione
+  }, 1000); // ritardo prima dell'animazione
+});
