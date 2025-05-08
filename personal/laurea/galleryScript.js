@@ -853,10 +853,6 @@ const imagePeopleTag = [
     names: ["carlo"]
   },
   {
-    image: "img_377",
-    names: ["claudia", "alfelix"]
-  },
-  {
     image: "img_378",
     names: ["claudia", "alfelix"]
   },
@@ -1799,7 +1795,7 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
     Promise.all(imageLoadPromises).then(loadedImages => {
 
       personalGallery.innerHTML = '';
-      
+
       const imageCards = [];
   
       loadedImages.forEach(({ imgId, width, height }, i) => {
