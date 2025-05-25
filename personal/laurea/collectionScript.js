@@ -542,6 +542,10 @@ const imagePeopleTag = [
     names: ["marco", "silvana"]
   },
   {
+    image: "img_192",
+    names: ["domenico"]
+  },
+  {
     image: "img_193",
     names: ["davide"]
   },
@@ -1117,8 +1121,8 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
     const imageLoadPromises = personalImages.map(imgId => {
       return new Promise(resolve => {
         const tempImg = new Image();
-
-        if (imgId<237) { 
+        let imgIdNumber = parseInt(imgId.substring(4));
+        if (imgIdNumber<237) { 
         tempImg.src = `${basePathSeduta}${imgId}.jpg`;
         } else {tempImg.src = `${basePath}${imgId}.jpg`;
 }
@@ -1140,7 +1144,9 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
   
       loadedImages.forEach(({ imgId, width, height }, i) => {
         const anchor = document.createElement('a');
-        if(imgId<237){
+        let imgIdNumber = parseInt(imgId.substring(4));
+        console.log(imgIdNumber)
+        if(imgIdNumber<237){
         anchor.href = `${basePathSeduta}${imgId}.jpg`;
         } else {anchor.href = `${basePath}${imgId}.jpg`;}
         anchor.target = '_blank';
@@ -1150,7 +1156,7 @@ console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id $
         anchor.id = `a_${imgId}`;
   
         const img = document.createElement('img');
-        if(imgId<237){
+        if(imgIdNumber<237){
         img.src = `${basePathSeduta}${imgId}.jpg`;
         } else {img.src = `${basePath}${imgId}.jpg`;}
         img.alt = '';
