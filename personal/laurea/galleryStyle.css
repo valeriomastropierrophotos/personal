@@ -68,6 +68,8 @@ select {
 }
 
 #selector { 
+    
+    margin-top: 70px;
     width: 50vw;
     margin-left: auto;       /* Margine sinistro automatico per centrare */
     margin-right: auto; 

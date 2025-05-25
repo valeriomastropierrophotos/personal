@@ -301,7 +301,7 @@ const imagePeopleTag = [
     names: ["desire"]
   },
   {
-    image: "img_218",
+    image: "img_222",
     names: ["sergio"]
   },
   {

@@ -29,7 +29,7 @@ lightboxMain.on('uiRegister', function() {
   
         pswp.on('change', () => {
           console.log('change');
-          el.href = '/personal/laurea/photos/webBig/' + pswp.currSlide.data.src.split('/').pop();
+          el.href = '/personal/laurea/galleryPhotos/webBig/' + pswp.currSlide.data.src.split('/').pop();
         });
       }
     });
@@ -51,7 +51,6 @@ lightboxMain.on('close', () => {
     history.back();
   }
 });
-
 
   const lightboxPersonal = new PhotoSwipeLightbox({
     gallery: '#personalGallery',
@@ -81,7 +80,7 @@ lightboxMain.on('close', () => {
     
           pswp.on('change', () => {
             console.log('change');
-            el.href = '/personal/laurea/photos/webBig/' + pswp.currSlide.data.src.split('/').pop();
+            el.href = '/personal/laurea/galleryPhotos/webBig/' + pswp.currSlide.data.src.split('/').pop();
           });
         }
       });
@@ -113,431 +112,969 @@ const selector = new SlimSelect({
  })
 
 const idToName = {
-  "1": "giovanni",
-  "2": "claudio",
-  "3": "jhon",
-  // ...
-  "30": "Francesca"
+
 };
 
 const imagePeopleTag = [
+  
   {
-    image: "img_5",
-    names: ["marianna"]
-  },
-  {
-    image: "img_6",
-    names: ["marianna"]
-  },
-  {
-    image: "img_8",
-    names: ["valerio", "linda"]
-  },
-  {
-    image: "img_9",
-    names: ["valerio", "linda"]
-  },
-  {
-    image: "img_10",
-    names: ["zia_pasqua", "zia_marta", "valerio"]
-  },
-  {
-    image: "img_11",
-    names: ["zia_pasqua", "zia_marta", "valerio"]
+    image: "img_12",
+    names: ["turturro"]
   },
   {
     image: "img_13",
-    names: ["zia_pasqua", "zia_marta", "valerio"]
+    names: ["erica", "mmw"]
   },
   {
     image: "img_14",
-    names: ["linda", "antonella", "lillino", "cinzia"]
+    names: ["erica", "mmw"]
   },
   {
-    image: "img_16",
-    names: ["linda", "antonella", "lillino", "cinzia", "zia_pasqua", "zia_marta"]
-  },
-  {
-    image: "img_19",
-    names: ["zia_rosa", "zio_onofrio"]
-  },
-  {
-    image: "img_20",
-    names: ["zio_franco", "domenico_piccolo", "cinzia"]
-  },
-  {
-    image: "img_21",
-    names: ["zio_franco", "domenico_piccolo", "cinzia"]
-  },
-  {
-    image: "img_23",
-    names: ["zio_franco", "domenico_piccolo", "cinzia", "marianna"]
-  },
-  {
-    image: "img_24",
-    names: ["zio_vito", "martina"]
-  },
-  {
-    image: "img_25",
-    names: ["zio_vito", "martina"]
-  },
-  {
-    image: "img_27",
-    names: ["mamma", "valerio"]
-  },
-  {
-    image: "img_28",
-    names: ["zia_rosa", "martina"]
-  },
-  {
-    image: "img_29",
-    names: ["mamma", "valerio", "zia_lella"]
+    image: "img_31",
+    names: ["davide"]
   },
   {
     image: "img_32",
-    names: ["zia_rosa", "mamma", "valerio", "martina"]
+    names: ["davide"]
+  },
+  {
+    image: "img_33",
+    names: ["mamma"]
+  },
+  {
+    image: "img_34",
+    names: ["mamma"]
+  },
+  {
+    image: "img_35",
+    names: ["mamma"]
+  },
+  {
+    image: "img_36",
+    names: ["mamma"]
+  },
+  {
+    image: "img_37",
+    names: ["mamma"]
+  },
+  {
+    image: "img_38",
+    names: ["mamma"]
+  },
+  {
+    image: "img_39",
+    names: ["mamma"]
+  },
+  {
+    image: "img_40",
+    names: ["cosmo"]
+  },
+  {
+    image: "img_41",
+    names: ["papa"]
+  },
+  {
+    image: "img_42",
+    names: ["zia_lella"]
+  },
+  {
+    image: "img_43",
+    names: ["zia_lella"]
+  },
+  {
+    image: "img_44",
+    names: ["zia_rosa",]
+  },
+  {
+    image: "img_45",
+    names: ["zia_rosa"]
+  },
+  {
+    image: "img_46",
+    names: ["zia_rosa"]
+  },
+  {
+    image: "img_47",
+    names: ["zia_rosa"]
+  },
+  {
+    image: "img_48",
+    names: ["martina"]
+  },
+  {
+    image: "img_49",
+    names: ["francesco"]
+  },
+  {
+    image: "img_50",
+    names: ["mamma"]
+  },
+  {
+    image: "img_51",
+    names: ["mamma"]
+  },
+  {
+    image: "img_52",
+    names: ["mamma"]
+  },
+  {
+    image: "img_53",
+    names: ["mamma"]
+  },
+  {
+    image: "img_54",
+    names: ["mamma"]
+  },
+  {
+    image: "img_55",
+    names: ["mamma"]
+  },
+  {
+    image: "img_56",
+    names: ["mamma"]
+  },
+  {
+    image: "img_57",
+    names: ["mamma"]
+  },
+  {
+    image: "img_58",
+    names: ["mamma"]
+  },
+  {
+    image: "img_59",
+    names: ["mamma"]
   },
   {
     image: "img_60",
-    names: ["zia_pasqua"]
+    names: ["mamma"]
+  },
+  {
+    image: "img_61",
+    names: ["mamma"]
+  },
+  {
+    image: "img_62",
+    names: ["mamma"]
+  },
+  {
+    image: "img_63",
+    names: ["mamma"]
+  },
+  {
+    image: "img_64",
+    names: ["mamma"]
+  },
+  {
+    image: "img_65",
+    names: ["mamma"]
+  },
+  {
+    image: "img_66",
+    names: ["mamma"]
+  },
+  {
+    image: "img_67",
+    names: ["mamma"]
+  },
+  {
+    image: "img_68",
+    names: ["mamma"]
+  },
+  {
+    image: "img_69",
+    names: ["mamma"]
+  },
+  {
+    image: "img_70",
+    names: ["mamma"]
+  },
+  {
+    image: "img_71",
+    names: ["mamma"]
   },
   {
     image: "img_72",
-    names: ["lillino", "domenico_piccolo"]
+    names: ["mamma"]
   },
   {
-    image: "img_72",
-    names: ["francesco"]
+    image: "img_73",
+    names: ["mamma"]
+  },
+  {
+    image: "img_74",
+    names: ["zia_rosa"]
+  },
+  {
+    image: "img_75",
+    names: ["zia_rosa"]
   },
   {
     image: "img_76",
-    names: ["francesco"]
+    names: ["zia_rosa", "zio_onofrio"]
   },
   {
     image: "img_77",
-    names: ["martina"]
+    names: ["zia_rosa", "zio_onofrio"]
   },
   {
     image: "img_78",
-    names: ["martina"]
+    names: ["zia_rosa", "zio_onofrio"]
   },
   {
     image: "img_79",
-    names: ["martina"]
+    names: ["zia_rosa", "zio_onofrio"]
   },
   {
     image: "img_80",
-    names: ["martina"]
+    names: ["zia_rosa"]
   },
   {
     image: "img_81",
-    names: ["lillino", "domenico_piccolo", "antonella"]
+    names: ["zia_rosa"]
   },
   {
     image: "img_82",
-    names: ["lillino", "domenico_piccolo", "antonella"]
+    names: ["zia_rosa"]
   },
   {
     image: "img_83",
-    names: ["lillino", "domenico_piccolo", "antonella"]
+    names: ["zia_rosa"]
   },
   {
     image: "img_84",
-    names: ["lillino", "antonella"]
+    names: ["zia_rosa"]
   },
   {
-    image: "img_85",
-    names: ["martina"]
+    image: "img_115",
+    names: ["marco"]
   },
   {
-    image: "img_87",
-    names: ["martina"]
-  },
-  {
-    image: "img_89",
-    names: ["francesco"]
-  },
-  {
-    image: "img_92",
-    names: ["francesco"]
-  },
-  {
-    image: "img_95",
-    names: ["francesco"]
-  },
-  {
-    image: "img_97",
-    names: ["francesco"]
-  },
-  {
-    image: "img_99",
-    names: ["francesco"]
-  },
-  {
-    image: "img_101",
-    names: ["francesco"]
-  },
-  {
-    image: "img_103",
-    names: ["francesco"]
-  },
-  {
-    image: "img_104",
-    names: ["francesco"]
+    image: "img_116",
+    names: ["nico"]
   },
   {
     image: "img_117",
-    names: ["francesco"]
+    names: ["nico"]
+  },
+  {
+    image: "img_118",
+    names: ["cosmo", "marika", "sergio"]
+  },
+  {
+    image: "img_119",
+    names: ["cosmo", "marika", "sergio"]
+  },
+  {
+    image: "img_121",
+    names: ["mmw", "sergio", "adriana"]
+  },
+  {
+    image: "img_122",
+    names: ["mmw", "sergio"]
   },
   {
     image: "img_123",
-    names: ["martina"]
-  },
-  {
-    image: "img_125",
-    names: ["davide"]
-  },
-  {
-    image: "img_126",
-    names: ["davide"]
+    names: ["mmw", "sergio", "marika"]
   },
   {
     image: "img_128",
-    names: ["martina"]
+    names: ["marco", "silvana"]
   },
   {
     image: "img_129",
-    names: ["davide"]
+    names: ["marco", "silvana"]
   },
   {
     image: "img_130",
-    names: ["francesco"]
+    names: ["davide", "francesco", "zia_rosa"]
   },
   {
     image: "img_131",
-    names: ["martina"]
+    names: ["papa"]
   },
   {
     image: "img_132",
-    names: ["martina"]
-  },
-  {
-    image: "img_136",
-    names: ["martina", "francesco"]
-  },
-  {
-    image: "img_138",
-    names: ["valerio", "linda", "zia_lella"]
-  },
-  {
-    image: "img_139",
-    names: ["valerio", "linda"]
-  },
-  {
-    image: "img_140",
-    names: ["linda", "marianna", "zia_marta"]
-  },
-  {
-    image: "img_141",
-    names: ["linda", "marianna", "zia_marta"]
-  },
-  {
-    image: "img_142",
-    names: ["cinzia", "antonella", "marianna", "zia_marta"]
-  },
-  {
-    image: "img_143",
-    names: ["valerio"]
-  },
-  {
-    image: "img_144",
-    names: ["linda", "zia_rosa", "valerio", "zia_marta"]
-  },
-  {
-    image: "img_145",
-    names: ["linda", "marianna", "zia_rosa", "zia_marta"]
-  },
-  {
-    image: "img_146",
-    names: ["linda", "marianna", "zia_marta"]
-  },
-  {
-    image: "img_147",
-    names: ["lillino", "antonella"]
-  },
-  {
-    image: "img_148",
-    names: ["cinzia", "marianna"]
-  },
-  {
-    image: "img_149",
-    names: ["zia_lella", "valerio"]
+    names: ["papa"]
   },
   {
     image: "img_150",
-    names: ["valerio"]
-  },
-  {
-    image: "img_152",
-    names: ["cinzia", "antonella"]
+    names: ["zio_onofrio"]
   },
   {
     image: "img_155",
-    names: ["linda", "fabio", "linda"]
+    names: ["mamma", "papa", "davide", "francesco"]
+  },
+  {
+    image: "img_156",
+    names: ["mamma", "papa", "davide", "francesco"]
+  },
+  {
+    image: "img_157",
+    names: ["mamma", "papa", "davide", "francesco"]
+  },
+  {
+    image: "img_158",
+    names: ["mamma", "papa", "davide", "francesco"]
+  },
+  {
+    image: "img_159",
+    names: ["mamma"]
+  },
+  {
+    image: "img_160",
+    names: ["mamma"]
+  },
+  {
+    image: "img_161",
+    names: ["mamma"]
+  },
+  {
+    image: "img_162",
+    names: ["mamma", "papa"]
+  },
+  {
+    image: "img_163",
+    names: ["mamma", "papa"]
+  },
+  {
+    image: "img_164",
+    names: ["alfelix"]
+  },
+  {
+    image: "img_165",
+    names: ["zia_rosa"]
+  },
+  {
+    image: "img_166",
+    names: ["cosmo", "marika", "nico", "francesca", "camilla", "paola", "alfelix", "ilaria", "mmw", "adriana"]
+  },
+  {
+    image: "img_167",
+    names: ["sergio"]
+  },
+  {
+    image: "img_168",
+    names: ["sergio"]
+  },
+  {
+    image: "img_169",
+    names: ["sergio"]
+  },
+  {
+    image: "img_170",
+    names: ["sergio"]
+  },
+  {
+    image: "img_171",
+    names: ["sergio"]
+  },
+  {
+    image: "img_172",
+    names: ["sergio"]
+  },
+  {
+    image: "img_173",
+    names: ["sergio", "mamma", "papa"]
+  },
+  {
+    image: "img_174",
+    names: ["sergio", "mamma", "domenico"]
   },
   {
     image: "img_175",
-    names: ["zio_onofrio", "zia_rosa"]
+    names: ["sergio", "mamma", "papa"]
   },
   {
     image: "img_176",
-    names: ["zio_onofrio", "zia_rosa"]
+    names: ["sergio"]
   },
   {
     image: "img_177",
-    names: ["zio_onofrio", "zia_rosa"]
+    names: ["mamma", "davide", "francesco"]
+  },
+  {
+    image: "img_178",
+    names: ["mamma", "davide", "francesco"]
   },
   {
     image: "img_179",
-    names: ["zio_onofrio", "zia_rosa"]
+    names: ["mamma", "davide", "francesco"]
+  },
+  {
+    image: "img_180",
+    names: ["mamma", "davide", "francesco"]
+  },
+  {
+    image: "img_181",
+    names: ["mamma", "davide", "francesco"]
   },
   {
     image: "img_182",
-    names: ["marianna"]
+    names: ["mamma"]
+  },
+  {
+    image: "img_183",
+    names: ["sergio", "mmw", "adriana", "cosmo"]
+  },
+  {
+    image: "img_184",
+    names: ["sergio", "mmw", "adriana", "cosmo"]
   },
   {
     image: "img_185",
-    names: ["fabio"]
+    names: ["sergio", "adriana", "cosmo"]
+  },
+  {
+    image: "img_186",
+    names: ["sergio", "adriana", "cosmo", "mamma"]
+  },
+  {
+    image: "img_187",
+    names: ["sergio", "adriana", "cosmo", "mamma"]
   },
   {
     image: "img_188",
-    names: ["zio_marta", "marianna"]
+    names: ["mamma"]
   },
   {
     image: "img_189",
-    names: ["lillino", "domenico_piccolo"]
-  },
-  {
-    image: "img_191",
-    names: ["fabio"]
-  },
-  {
-    image: "img_192",
-    names: ["fabio", "antonella"]
+    names: ["marco", "silvana"]
   },
   {
     image: "img_193",
-    names: ["domenico_piccolo", "antonella", "cinzia", "lillino", "zia_pasqua"]
+    names: ["davide"]
   },
   {
-    image: "img_202",
-    names: ["fabio", "giuseppe"]
+    image: "img_194",
+    names: ["davide"]
   },
   {
-    image: "img_203",
-    names: ["valerio", "francesco", "davide", "mamma"]
+    image: "img_195",
+    names: ["alfelix", "adriana", "mmw", "nico"]
   },
   {
-    image: "img_204",
-    names: ["valerio", "francesco", "davide", "mamma"]
+    image: "img_196",
+    names: ["alfelix", "adriana", "mmw", "nico"]
+  },
+  {
+    image: "img_197",
+    names: ["alfelix", "mmw"]
   },
   {
     image: "img_206",
-    names: ["valerio", "papa", "francesco", "davide", "mamma"]
+    names: ["sergio", "cosmo"]
   },
   {
-    image: "img_207",
-    names: ["valerio", "papa", "francesco", "davide", "mamma"]
+    image: "img_209",
+    names: ["sergio"]
   },
   {
-    image: "img_211",
-    names: ["fabio"]
+    image: "img_213",
+    names: ["paola", "camilla", "nico", "mmw", "ilaria", "sergio", "adriana", "alfelix", "cosmo", "marika", "francesca", "desire"]
+  },
+  {
+    image: "img_214",
+    names: ["paola", "camilla", "nico", "mmw", "ilaria", "sergio", "adriana", "alfelix", "cosmo", "marika", "francesca", "desire"]
+  },
+  {
+    image: "img_215",
+    names: ["paola", "camilla", "nico", "mmw", "ilaria", "sergio", "adriana", "alfelix", "cosmo", "marika", "francesca", "desire"]
   },
   {
     image: "img_216",
-    names: ["fabio", "pino"]
+    names: ["paola", "camilla", "nico", "mmw", "ilaria", "sergio", "adriana", "alfelix", "cosmo", "marika", "francesca", "desire"]
   },
   {
     image: "img_217",
-    names: ["valerio"]
+    names: ["paola", "camilla", "nico", "mmw", "ilaria", "sergio", "adriana", "alfelix", "cosmo", "marika", "francesca", "desire"]
+  },
+  {
+    image: "img_218",
+    names: ["sergio"]
+  },
+  {
+    image: "img_219",
+    names: ["camilla", "nico", "cosmo", "marika", "francesca"]
   },
   {
     image: "img_220",
-    names: ["valerio"]
+    names: ["camilla", "nico", "cosmo", "marika", "francesca"]
+  },
+  {
+    image: "img_221",
+    names: ["desire"]
   },
   {
     image: "img_222",
-    names: ["valerio", "mamma", "papa"]
+    names: ["sergio", "zia_rosa"]
   },
   {
     image: "img_223",
-    names: ["valerio", "mamma", "papa"]
+    names: ["papa"]
+  },
+  {
+    image: "img_224",
+    names: ["francesco"]
+  },
+  {
+    image: "img_225",
+    names: ["davide"]
   },
   {
     image: "img_226",
-    names: ["valerio", "mamma", "papa"]
+    names: ["davide", "francesco"]
+  },
+  {
+    image: "img_227",
+    names: ["davide", "francesco"]
+  },
+  {
+    image: "img_228",
+    names: ["mamma", "papa", "davide", "francesco"]
+  },
+  {
+    image: "img_229",
+    names: ["mamma", "papa", "davide", "francesco"]
   },
   {
     image: "img_230",
-    names: ["valerio", "mamma"]
+    names: ["mamma", "papa", "davide", "francesco"]
+  },
+  {
+    image: "img_231",
+    names: ["mamma", "papa", "davide", "francesco"]
   },
   {
     image: "img_233",
-    names: ["valerio", "davide", "francesco"]
+    names: ["zio_onofrio"]
   },
   {
-    image: "img_239",
-    names: ["valerio", "zio_onofrio", "zia_rosa"]
+    image: "img_234",
+    names: ["zia_lella"]
   },
   {
-    image: "img_240",
-    names: ["valerio", "zia_lella", "martina", "zio_vito"]
+    image: "img_235",
+    names: ["mamma", "zia_lella"]
   },
   {
-    image: "img_244",
-    names: ["pino", "rosa", "zia_anna", "valerio"]
+    image: "img_305",
+    names: ["marianna"]
   },
   {
-    image: "img_246",
-    names: ["zia_marta", "valerio", "zio_gino"]
+    image: "img_306",
+    names: ["marianna"]
   },
   {
-    image: "img_250",
-    names: ["valerio", "zia_pasqua", "zio_franco"]
+    image: "img_308",
+    names: ["valerio", "linda"]
   },
   {
-    image: "img_253",
-    names: ["valerio", "marianna", "giuseppe", "linda", "fabio", "cinzia", "lillino", "domenico_piccolo", "antonella"]
+    image: "img_309",
+    names: ["valerio", "linda"]
   },
   {
-    image: "img_258",
-    names: ["valerio", "marianna", "giuseppe", "linda", "fabio", "cinzia", "lillino", "domenico_piccolo", "antonella"]
+    image: "img_3010",
+    names: ["zia_pasqua", "zia_marta", "valerio"]
   },
   {
-    image: "img_259",
-    names: ["valerio", "marianna", "giuseppe", "linda", "fabio", "cinzia", "lillino", "domenico_piccolo", "antonella"]
+    image: "img_3011",
+    names: ["zia_pasqua", "zia_marta", "valerio"]
   },
   {
-    image: "img_262",
-    names: ["valerio", "mamma", "davide", "francesco", "papa"] 
+    image: "img_3013",
+    names: ["zia_pasqua", "zia_marta", "valerio"]
   },
   {
-    image: "img_263",
+    image: "img_3014",
+    names: ["linda", "antonella", "lillino", "cinzia"]
+  },
+  {
+    image: "img_3016",
+    names: ["linda", "antonella", "lillino", "cinzia", "zia_pasqua", "zia_marta"]
+  },
+  {
+    image: "img_3019",
+    names: ["zia_rosa", "zio_onofrio"]
+  },
+  {
+    image: "img_3020",
+    names: ["zio_franco", "domenico_piccolo", "cinzia"]
+  },
+  {
+    image: "img_3021",
+    names: ["zio_franco", "domenico_piccolo", "cinzia"]
+  },
+  {
+    image: "img_3023",
+    names: ["zio_franco", "domenico_piccolo", "cinzia", "marianna"]
+  },
+  {
+    image: "img_3024",
+    names: ["zio_vito", "martina"]
+  },
+  {
+    image: "img_3025",
+    names: ["zio_vito", "martina"]
+  },
+  {
+    image: "img_3027",
+    names: ["mamma", "valerio"]
+  },
+  {
+    image: "img_3028",
+    names: ["zia_rosa", "martina"]
+  },
+  {
+    image: "img_3029",
+    names: ["mamma", "valerio", "zia_lella"]
+  },
+  {
+    image: "img_3032",
+    names: ["zia_rosa", "mamma", "valerio", "martina"]
+  },
+  {
+    image: "img_3060",
+    names: ["zia_pasqua"]
+  },
+  {
+    image: "img_3072",
+    names: ["lillino", "domenico_piccolo"]
+  },
+  {
+    image: "img_3072",
+    names: ["francesco"]
+  },
+  {
+    image: "img_3076",
+    names: ["francesco"]
+  },
+  {
+    image: "img_3077",
+    names: ["martina"]
+  },
+  {
+    image: "img_3078",
+    names: ["martina"]
+  },
+  {
+    image: "img_3079",
+    names: ["martina"]
+  },
+  {
+    image: "img_3080",
+    names: ["martina"]
+  },
+  {
+    image: "img_3081",
+    names: ["lillino", "domenico_piccolo", "antonella"]
+  },
+  {
+    image: "img_3082",
+    names: ["lillino", "domenico_piccolo", "antonella"]
+  },
+  {
+    image: "img_3083",
+    names: ["lillino", "domenico_piccolo", "antonella"]
+  },
+  {
+    image: "img_3084",
+    names: ["lillino", "antonella"]
+  },
+  {
+    image: "img_3085",
+    names: ["martina"]
+  },
+  {
+    image: "img_3087",
+    names: ["martina"]
+  },
+  {
+    image: "img_3089",
+    names: ["francesco"]
+  },
+  {
+    image: "img_3092",
+    names: ["francesco"]
+  },
+  {
+    image: "img_3095",
+    names: ["francesco"]
+  },
+  {
+    image: "img_3097",
+    names: ["francesco"]
+  },
+  {
+    image: "img_3099",
+    names: ["francesco"]
+  },
+  {
+    image: "img_30101",
+    names: ["francesco"]
+  },
+  {
+    image: "img_30103",
+    names: ["francesco"]
+  },
+  {
+    image: "img_30104",
+    names: ["francesco"]
+  },
+  {
+    image: "img_30117",
+    names: ["francesco"]
+  },
+  {
+    image: "img_30123",
+    names: ["martina"]
+  },
+  {
+    image: "img_30125",
+    names: ["davide"]
+  },
+  {
+    image: "img_30126",
+    names: ["davide"]
+  },
+  {
+    image: "img_30128",
+    names: ["martina"]
+  },
+  {
+    image: "img_30129",
+    names: ["davide"]
+  },
+  {
+    image: "img_30130",
+    names: ["francesco"]
+  },
+  {
+    image: "img_30131",
+    names: ["martina"]
+  },
+  {
+    image: "img_30132",
+    names: ["martina"]
+  },
+  {
+    image: "img_30136",
+    names: ["martina", "francesco"]
+  },
+  {
+    image: "img_30138",
+    names: ["valerio", "linda", "zia_lella"]
+  },
+  {
+    image: "img_30139",
+    names: ["valerio", "linda"]
+  },
+  {
+    image: "img_30140",
+    names: ["linda", "marianna", "zia_marta"]
+  },
+  {
+    image: "img_30141",
+    names: ["linda", "marianna", "zia_marta"]
+  },
+  {
+    image: "img_30142",
+    names: ["cinzia", "antonella", "marianna", "zia_marta"]
+  },
+  {
+    image: "img_30143",
     names: ["valerio"]
   },
   {
-    image: "img_266",
+    image: "img_30144",
+    names: ["linda", "zia_rosa", "valerio", "zia_marta"]
+  },
+  {
+    image: "img_30145",
+    names: ["linda", "marianna", "zia_rosa", "zia_marta"]
+  },
+  {
+    image: "img_30146",
+    names: ["linda", "marianna", "zia_marta"]
+  },
+  {
+    image: "img_30147",
+    names: ["lillino", "antonella"]
+  },
+  {
+    image: "img_30148",
+    names: ["cinzia", "marianna"]
+  },
+  {
+    image: "img_30149",
+    names: ["zia_lella", "valerio"]
+  },
+  {
+    image: "img_30150",
+    names: ["valerio"]
+  },
+  {
+    image: "img_30152",
+    names: ["cinzia", "antonella"]
+  },
+  {
+    image: "img_30155",
+    names: ["linda", "fabio", "linda"]
+  },
+  {
+    image: "img_30175",
+    names: ["zio_onofrio", "zia_rosa"]
+  },
+  {
+    image: "img_30176",
+    names: ["zio_onofrio", "zia_rosa"]
+  },
+  {
+    image: "img_30177",
+    names: ["zio_onofrio", "zia_rosa"]
+  },
+  {
+    image: "img_30179",
+    names: ["zio_onofrio", "zia_rosa"]
+  },
+  {
+    image: "img_30182",
+    names: ["marianna"]
+  },
+  {
+    image: "img_30185",
+    names: ["fabio"]
+  },
+  {
+    image: "img_30188",
+    names: ["zio_marta", "marianna"]
+  },
+  {
+    image: "img_30189",
+    names: ["lillino", "domenico_piccolo"]
+  },
+  {
+    image: "img_30191",
+    names: ["fabio"]
+  },
+  {
+    image: "img_30192",
+    names: ["fabio", "antonella"]
+  },
+  {
+    image: "img_30193",
+    names: ["domenico_piccolo", "antonella", "cinzia", "lillino", "zia_pasqua"]
+  },
+  {
+    image: "img_30202",
+    names: ["fabio", "giuseppe"]
+  },
+  {
+    image: "img_30203",
+    names: ["valerio", "francesco", "davide", "mamma"]
+  },
+  {
+    image: "img_30204",
+    names: ["valerio", "francesco", "davide", "mamma"]
+  },
+  {
+    image: "img_30206",
+    names: ["valerio", "papa", "francesco", "davide", "mamma"]
+  },
+  {
+    image: "img_30207",
+    names: ["valerio", "papa", "francesco", "davide", "mamma"]
+  },
+  {
+    image: "img_30211",
+    names: ["fabio"]
+  },
+  {
+    image: "img_30216",
+    names: ["fabio", "pino"]
+  },
+  {
+    image: "img_30217",
+    names: ["valerio"]
+  },
+  {
+    image: "img_30220",
+    names: ["valerio"]
+  },
+  {
+    image: "img_30222",
+    names: ["valerio", "mamma", "papa"]
+  },
+  {
+    image: "img_30223",
+    names: ["valerio", "mamma", "papa"]
+  },
+  {
+    image: "img_30226",
+    names: ["valerio", "mamma", "papa"]
+  },
+  {
+    image: "img_30230",
+    names: ["valerio", "mamma"]
+  },
+  {
+    image: "img_30233",
+    names: ["valerio", "davide", "francesco"]
+  },
+  {
+    image: "img_30239",
+    names: ["valerio", "zio_onofrio", "zia_rosa"]
+  },
+  {
+    image: "img_30240",
+    names: ["valerio", "zia_lella", "martina", "zio_vito"]
+  },
+  {
+    image: "img_30244",
+    names: ["pino", "rosa", "zia_anna", "valerio"]
+  },
+  {
+    image: "img_30246",
+    names: ["zia_marta", "valerio", "zio_gino"]
+  },
+  {
+    image: "img_30250",
+    names: ["valerio", "zia_pasqua", "zio_franco"]
+  },
+  {
+    image: "img_30253",
+    names: ["valerio", "marianna", "giuseppe", "linda", "fabio", "cinzia", "lillino", "domenico_piccolo", "antonella"]
+  },
+  {
+    image: "img_30258",
+    names: ["valerio", "marianna", "giuseppe", "linda", "fabio", "cinzia", "lillino", "domenico_piccolo", "antonella"]
+  },
+  {
+    image: "img_30259",
+    names: ["valerio", "marianna", "giuseppe", "linda", "fabio", "cinzia", "lillino", "domenico_piccolo", "antonella"]
+  },
+  {
+    image: "img_30262",
+    names: ["valerio", "mamma", "davide", "francesco", "papa"] 
+  },
+  {
+    image: "img_30263",
+    names: ["valerio"]
+  },
+  {
+    image: "img_30266",
     names: ["valerio", "mamma","papa"] 
   },
   {
-    image: "img_269",
+    image: "img_30269",
     names: ["valerio", "mamma","papa"] 
   },
   {
-    image: "img_270",
+    image: "img_30270",
     names: ["valerio", "mamma","papa"] 
   }
 ]
+
 
 if (window.location.hash === '') {
   console.log('delete ALL')
@@ -553,74 +1090,89 @@ let selectedName = idToName[id];
 selector.setSelected(selectedName);
 console.log(`il nome selezionato in partenza è stato ${selectedName} con l'id ${id}`)
 
-
-
-
-
   let slideshowInterval;
 
   function startSlideshow(selectedName) {
     const personalGallery = document.getElementById('personalGallery');
     const personalImages = imagePeopleTag
-    .filter(entry => entry.names.includes(selectedName.toLowerCase()))
-    .map(entry => entry.image);
+      .filter(entry => entry.names.includes(selectedName.toLowerCase()))
+      .map(entry => entry.image);
   
     if (personalImages.length === 0) {
-      //show alternative image 
+      personalGallery.innerHTML = '<p>Nessuna immagine disponibile.</p>';
     }
 
-    const basePreviewPath = '/personal/laurea/photos/webBig/';
-    const baseBigPath = '/personal/laurea/photos/webBig/';
-  
-    let index = 0;
-  
-    if (slideshowInterval) clearInterval(slideshowInterval);
+
+    const basePath = '/personal/laurea/photos/webBig/';
+    const basePathSeduta = '/personal/laurea/galleryPhotos/webBig/';
     personalGallery.innerHTML = '';
+
+    const loadingMessage = document.createElement('p');
+    loadingMessage.textContent = 'Caricamento...';
+    loadingMessage.id = 'loadingMessage'
+    personalGallery.appendChild(loadingMessage);
+
+    if (slideshowInterval) clearInterval(slideshowInterval);
   
-    const imageCards = [];
+    const imageLoadPromises = personalImages.map(imgId => {
+      return new Promise(resolve => {
+        const tempImg = new Image();
+
+        if (imgId<237) { 
+        tempImg.src = `${basePathSeduta}${imgId}.jpg`;
+        } else {tempImg.src = `${basePath}${imgId}.jpg`;
+}
+        tempImg.onload = () => {
+          resolve({
+            imgId,
+            width: tempImg.naturalWidth,
+            height: tempImg.naturalHeight
+          });
+        };
+      });
+    });
   
-    personalImages.forEach((imgId, i) => {
-      const bigImagePath = `${baseBigPath}${imgId}.jpg`;
-      const previewPath = `${basePreviewPath}${imgId}.jpg`;
+    Promise.all(imageLoadPromises).then(loadedImages => {
+
+      personalGallery.innerHTML = '';
+
+      const imageCards = [];
   
-      // Crea oggetto immagine temporaneo per leggere dimensioni
-      const tempImg = new Image();
-      tempImg.src = bigImagePath;
-      tempImg.onload = () => {
-        const width = tempImg.naturalWidth;
-        const height = tempImg.naturalHeight;
-  
+      loadedImages.forEach(({ imgId, width, height }, i) => {
         const anchor = document.createElement('a');
-        anchor.href = bigImagePath;
+        if(imgId<237){
+        anchor.href = `${basePathSeduta}${imgId}.jpg`;
+        } else {anchor.href = `${basePath}${imgId}.jpg`;}
         anchor.target = '_blank';
         anchor.classList.add('imageCard');
         anchor.setAttribute('data-pswp-width', width);
         anchor.setAttribute('data-pswp-height', height);
         anchor.id = `a_${imgId}`;
   
-        if (i === 0) anchor.classList.add('active');
-  
         const img = document.createElement('img');
-        img.src = previewPath;
+        if(imgId<237){
+        img.src = `${basePathSeduta}${imgId}.jpg`;
+        } else {img.src = `${basePath}${imgId}.jpg`;}
         img.alt = '';
         img.id = imgId;
         img.classList.add('foto');
+        if (i === 0) anchor.classList.add('active');
   
         anchor.appendChild(img);
         personalGallery.appendChild(anchor);
         imageCards.push(anchor);
+      });
   
-        // Avvia slideshow solo quando tutte le immagini sono caricate
-        if (imageCards.length === personalImages.length) {
-          slideshowInterval = setInterval(() => {
-            imageCards[index].classList.remove('active');
-            index = (index + 1) % imageCards.length;
-            imageCards[index].classList.add('active');
-          }, 3000);
-        }
-      };
+      // Avvia slideshow ordinato
+      let index = 0;
+      slideshowInterval = setInterval(() => {
+        imageCards[index].classList.remove('active');
+        index = (index + 1) % imageCards.length;
+        imageCards[index].classList.add('active');
+      }, 1500);
     });
   }
+  
 
 // Ascolta il cambio nel menu a tendina
 document.querySelector('select').addEventListener('change', (event) => {
@@ -645,51 +1197,59 @@ if (selectedName) {
 }
 
   //Download Personal
-  document.getElementById('downloadPersonal').addEventListener('click', (e) => {
-    e.preventDefault();
+  document.getElementById('downloadPersonal').addEventListener('click', () => {
+    const gallery = document.getElementById('personalGallery');
+    const links = gallery.querySelectorAll('a');
 
-    const fotoElements = document.querySelectorAll('#personalGallery .foto');
+    links.forEach((link, index) => {
+        const url = link.href;
+        const filename = url.substring(url.lastIndexOf('/') + 1);
 
-    const selectedImages = Array.from(fotoElements).map(e => e.id)
-
-    if (selectedImages.length === 0) {
-      alert('Seleziona almeno una immagine');
-      return;
-    }
-
-    fetch('/image/download', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ imagesId: selectedImages })
-    })
-    .then(response => response.blob())
-    .then(blob => {
-      // Crea un link temporaneo per il download del file ZIP
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'images.zip';
-      link.click();
-      URL.revokeObjectURL(url);
-    })
-    .catch(error => {
-      console.error('Errore durante il download:', error);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     });
-  });
+
+    if (links.length === 0) {
+        alert('Seleziona prima il nome');
+    }
+});
 
 
-  window.addEventListener('load', () => {
-    const banner = document.getElementById('topBanner');
-  
+window.addEventListener('load', () => {
+  const banner = document.getElementById('topBanner');
+  const loadingText = document.getElementById('loadingText');
+
+  // Crea overlay blocca interazioni
+  const blocker = document.createElement('div');
+  blocker.style.position = 'fixed';
+  blocker.style.top = '0';
+  blocker.style.left = '0';
+  blocker.style.width = '100%';
+  blocker.style.height = '100%';
+  blocker.style.zIndex = '9998'; // appena sotto al banner
+  blocker.style.background = 'transparent';
+  blocker.style.pointerEvents = 'all';
+  blocker.style.overflow = 'hidden';
+  document.body.appendChild(blocker);
+
+  // Forza scroll in alto
+  window.scrollTo(0, 0);
+
+  setTimeout(() => {
+    banner.classList.add('shrink');
+
     setTimeout(() => {
-      banner.classList.add('shrink');
-  
-      // Dopo l'animazione (es: 1000ms), cambia in sticky
-      setTimeout(() => {
-        banner.classList.remove('shrink');
-        banner.classList.add('final');
-      }, 1000); // deve combaciare con `transition: 1s`
-    }, 2000); // aspetta 2 secondi prima di iniziare l'animazione
-  });
+      banner.classList.remove('shrink');
+      banner.classList.add('final');
+
+      // Rimuove "Caricamento..." e blocco interazione
+      if (loadingText) loadingText.remove();
+      blocker.remove();
+    }, 1000); // durata animazione
+  }, 1000); // ritardo prima di iniziare
+});
